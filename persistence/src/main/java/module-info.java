@@ -5,6 +5,7 @@ module com.okta.developer.modules.persistence {
     requires spring.context;
     requires spring.data.commons;
     requires spring.data.mongodb;
+    requires spring.web;
 
     exports com.okta.developer.animals.bird;
 
