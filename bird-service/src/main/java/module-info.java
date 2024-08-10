@@ -1,4 +1,4 @@
-module com.okta.developer.modules.persistence {
+module com.okta.developer.modules.bird {
 
     requires java.annotation;
     requires spring.beans;
