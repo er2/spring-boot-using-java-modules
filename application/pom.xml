@@ -7,7 +7,7 @@
         <artifactId>spring-boot-with-modules</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>spring-boot-with-modules-app</artifactId>
+    <artifactId>monolith</artifactId>
 
     <dependencies>
         <dependency>
@@ -16,7 +16,7 @@
         </dependency>
         <dependency>
             <groupId>com.okta.developer</groupId>
-            <artifactId>spring-boot-with-modules-persistence</artifactId>
+            <artifactId>bird-service</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

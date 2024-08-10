@@ -19,7 +19,7 @@
 
     <modules>
         <module>application</module>
-        <module>persistence</module>
+        <module>bird-service</module>
     </modules>
 
 </project>
