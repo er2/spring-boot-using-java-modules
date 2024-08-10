@@ -18,7 +18,7 @@
     </properties>
 
     <modules>
-        <module>application</module>
+        <module>monolith</module>
         <module>bird-service</module>
     </modules>
 
