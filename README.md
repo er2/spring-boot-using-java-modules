@@ -328,48 +328,6 @@ If everything went correctly you'll be able to navigate to `http://localhost:808
 [{"id":"5f03ff7277a08a55ae73c8b9","specie":"Hummingbird","size":"small"}]
 ```
 
-## Making the Application Secure
-
-Let's tune our app and make it secure so we start depending on another external library before moving on to adding Java modules.
-
-Add the following dependency to your `application/pom.xml` file:
-```xml
-<dependency>
-    <groupId>com.okta.spring</groupId>
-    <artifactId>okta-spring-boot-starter</artifactId>
-    <version>1.3.0</version>
-</dependency>
-```
-
-### Register an Application on Okta
-
-To begin, sign up for a [forever-free Okta developer account](https://developer.okta.com/signup/).
-
-Once you're signed in to Okta, register your client application.
-
-* In the top menu, click on **Applications**
-* Click on **Add Application**
-* Select **Web** and click **Next**
-* Enter `Spring Boot with Java Modules` for the **Name** (this value doesn't matter, so feel free to change it)
-* Change the Login redirect URI to be `http://localhost:8080/login/oauth2/code/okta`
-* Click **Done**
-
-### Configure the App with Okta Information
-
-Create a file `application/src/main/resources/application.properties` with the following content:
-
-```
-okta.oauth2.issuer=https://{yourOktaDomain}/oauth2/default
-okta.oauth2.clientId={clientId}
-okta.oauth2.clientSecret={clientSecret} 
-```
-
-You can find {clientId} and {clientSecret} in your application setup.
-
-The {yourOktaDomain} you can find on Okta dashboard.
-
-Now if you restart the app and navigate to `http://localhost:8080/bird` you'll get a login page appearing.
-
 ## Using Java Modules
 
 Now it is time to modularize the app. This is achieved by placing a file `module-info.java` on source root for each module. We'll be doing this for our two modules `application` and `persistence`. There are two ways to modularize a Java app: top-down and bottom-up. In this tutorial we'll be showing the bottom-up approach, that is modularizing the libraries before the app. This approach is preferable as we'll have `persistence` already modularized when writing the `application` `module-info.java`. If `application` was modularized first then `persistence` would be treated as an automatic module, and it would have to be referenced as the JAR file name.
