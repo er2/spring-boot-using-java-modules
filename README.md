@@ -385,7 +385,7 @@ By adding the `requires com.okta.developer.modules.persistence` this module will
 
 Go to the project root and run 
 ```bash
-mvn install && mvn spring-boot:run -pl application
+mvn install && mvn spring-boot:run -pl monolith
 ```
 
 Again, if everything went correctly you'll be able, after logging in, to navigate to `http://localhost:8080/bird` and see a JSON output.
